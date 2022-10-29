@@ -28,7 +28,7 @@ def start(message):
 @bot.callback_query_handler(func=(lambda call:True))
 def callback_inline(call):
     if call.data == "acc":
-        data = request.get(f'https://vodka-toolsx.herokuapp.com/Host-Maker/?type=1').json()
+        data = requests.get(f'https://vodka-toolsx.herokuapp.com/Host-Maker/?type=1').json()
         eml = data['Email']
 
         weblogin = "<a href='https://pantheon.auth0.com/login?state=hKFo2SBKblczb3JaS3V6RHBTdnRUME5SbWdaMXFkRnVQaVljUKFupWxvZ2luo3RpZNkgU3M4S3B6YTJlUGRQaU1GRUNlaTJ3aDlfR1VDbU1mV06jY2lk2SBxOWZXajl4blB4NE9BQVk5SU5ZZGNmaVlJVGtHdmFIcg&client=q9fWj9xnPx4OAAY9INYdcfiYITkGvaHr&protocol=oauth2&response_type=code&redirect_uri=https%3A%2F%2Fdashboard.pantheon.io%2Fauth%2Fcallback&scope=login%20openid%20pantheon&connection='>Here</a>"
