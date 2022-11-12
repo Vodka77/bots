@@ -42,19 +42,37 @@ def start(message):
             @bot.callback_query_handler(func=(lambda call:True))
             def callback_inline(call):
                 if call.data == 'make':
-                    host = requests.get('https://vodka-toolsx.herokuapp.com/Host-Maker/?type=2').json()
-                    user = host['user']
-                    email = host['Email']
-                    passw = host['Password']
-                    login = host['login']
-                    web_url = host['Website-Url']
-                    log = f"<a href='{login}'>Login-Url</a>"  
-                    name = f"<a href='{call.from_user.first_name}'>{call.from_user.first_name}</a>" 
-                    bot.send_message(call.message.chat.id,f'<b>Done Create python Host Account 🧑‍💻\n- - - - - - - - - - - -\nEmail : <code>{email}</code>\nUserName : <code>{user}</code>\nPassword : <code>{passw}</code>\nLogin : {log}\nWebsite-Url : {web_url}\n- - - - - - - - - - - -\nBy : @Vodka_Tools</b>',parse_mode='html',disable_web_page_preview=True)
+                    ch = 'Vodka_Tools'
+                    idu = message.chat.id
+                    join = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch}&user_id={idu}").text
+                    ch1 = 'TBGBT'
+                    idu1 = message.chat.id
+                    join1 = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch1}&user_id={idu1}").text
+                    if '"status":"left"' in join+join1:
+                        bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n- https://t.me/TBGBT\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True) 
+                    else:
+                        host = requests.get('https://vodka-toolsx.herokuapp.com/Host-Maker/?type=2').json()
+                        user = host['user']
+                        email = host['Email']
+                        passw = host['Password']
+                        login = host['login']
+                        web_url = host['Website-Url']
+                        log = f"<a href='{login}'>Login-Url</a>"  
+                        name = f"<a href='{call.from_user.first_name}'>{call.from_user.first_name}</a>" 
+                        bot.send_message(call.message.chat.id,f'<b>Done Create python Host Account 🧑‍💻\n- - - - - - - - - - - -\nEmail : <code>{email}</code>\nUserName : <code>{user}</code>\nPassword : <code>{passw}</code>\nLogin : {log}\nWebsite-Url : {web_url}\n- - - - - - - - - - - -\nBy : @Vodka_Tools</b>',parse_mode='html',disable_web_page_preview=True)
                 if call.data == "acc":
-                    data = requests.get(f'https://vodka-toolsx.herokuapp.com/Host-Maker/?type=1').json()
-                    eml = data['Email']
-                    weblogin = "<a href='https://pantheon.auth0.com/login?state=hKFo2SBKblczb3JaS3V6RHBTdnRUME5SbWdaMXFkRnVQaVljUKFupWxvZ2luo3RpZNkgU3M4S3B6YTJlUGRQaU1GRUNlaTJ3aDlfR1VDbU1mV06jY2lk2SBxOWZXajl4blB4NE9BQVk5SU5ZZGNmaVlJVGtHdmFIcg&client=q9fWj9xnPx4OAAY9INYdcfiYITkGvaHr&protocol=oauth2&response_type=code&redirect_uri=https%3A%2F%2Fdashboard.pantheon.io%2Fauth%2Fcallback&scope=login%20openid%20pantheon&connection='>Here</a>"
-                    bot.send_message(call.message.chat.id,f'<b>Done Create php Host Account 🧑‍💻\n- - - - - - - - - - -\nEmail : <code>{eml}</code>\nPassword : <code>QX#kC_Gdk%a</code>\nLogin Url : {weblogin}\n- - - - - - - - - - -\nBy : @Vodka_Tools</b>',parse_mode='html',disable_web_page_preview=True) 
+                    ch = 'Vodka_Tools'
+                    idu = message.chat.id
+                    join = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch}&user_id={idu}").text
+                    ch1 = 'TBGBT'
+                    idu1 = message.chat.id
+                    join1 = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch1}&user_id={idu1}").text
+                    if '"status":"left"' in join+join1:
+                        bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n- https://t.me/TBGBT\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True) 
+                    else:
+                        data = requests.get(f'https://vodka-toolsx.herokuapp.com/Host-Maker/?type=1').json()
+                        eml = data['Email']
+                        weblogin = "<a href='https://pantheon.auth0.com/login?state=hKFo2SBKblczb3JaS3V6RHBTdnRUME5SbWdaMXFkRnVQaVljUKFupWxvZ2luo3RpZNkgU3M4S3B6YTJlUGRQaU1GRUNlaTJ3aDlfR1VDbU1mV06jY2lk2SBxOWZXajl4blB4NE9BQVk5SU5ZZGNmaVlJVGtHdmFIcg&client=q9fWj9xnPx4OAAY9INYdcfiYITkGvaHr&protocol=oauth2&response_type=code&redirect_uri=https%3A%2F%2Fdashboard.pantheon.io%2Fauth%2Fcallback&scope=login%20openid%20pantheon&connection='>Here</a>"
+                        bot.send_message(call.message.chat.id,f'<b>Done Create php Host Account 🧑‍💻\n- - - - - - - - - - -\nEmail : <code>{eml}</code>\nPassword : <code>QX#kC_Gdk%a</code>\nLogin Url : {weblogin}\n- - - - - - - - - - -\nBy : @Vodka_Tools</b>',parse_mode='html',disable_web_page_preview=True) 
                                   
 bot.polling(True)
