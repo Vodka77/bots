@@ -21,6 +21,11 @@ def start(message):
         join = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch}&user_id={idu}").text
         if '"status":"left"' in join:
             bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True)
+        ch = 'TBGBT'
+        idu = message.chat.id
+        join = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch}&user_id={idu}").text
+        if '"status":"left"' in join:
+            bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/TBGBT\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True)
         else:
             print(message.from_user.id)
             print('@',message.from_user.username)
