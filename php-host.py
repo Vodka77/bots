@@ -19,16 +19,11 @@ def start(message):
         ch = 'Vodka_Tools'
         idu = message.chat.id
         join = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch}&user_id={idu}").text
-        if '"status":"left"' in join:
-            bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True)
-@bot.message_handler(commands=['start','help'])
-def start(message):
-    if message.chat.type == 'private':            
-        ch = 'TBGBT'
-        idu = message.chat.id
-        join = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch}&user_id={idu}").text
-        if '"status":"left"' in join:
-            bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/TBGBT\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True)
+        ch1 = 'TBGBT'
+        idu1 = message.chat.id
+        join1 = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch1}&user_id={idu1}").text
+        if '"status":"left"' in join+join1:
+            bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n- https://t.me/TBGBT\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True)           
         else:
             print(message.from_user.id)
             print('@',message.from_user.username)
