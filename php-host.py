@@ -30,9 +30,10 @@ def start(message):
             maac = types.InlineKeyboardMarkup()
             ca = types.InlineKeyboardButton(text ="- PHP Host",callback_data = 'acc')
             py = types.InlineKeyboardButton(text ="- Python Host",callback_data = 'make')
-            ch = types.InlineKeyboardButton(text ="- Channel",url='https://t.me/Vodka_Tools')    
+            ch = types.InlineKeyboardButton(text ="- Channel 1",url='https://t.me/Vodka_Tools')  
+            ch1 = types.InlineKeyboardButton(text ="- Channel 2",url='https://t.me/TBGBT')  
             maac.row_width = 2
-            maac.add(ca,py,ch)    
+            maac.add(ca,py,ch,ch1)    
             bro = f"<a href='https://t.me/{message.from_user.username}'>{message.from_user.first_name}</a>"            
             bot.send_message(message.chat.id , f'<b>Hi {bro}\n- - - - - - - - - - - - - -\nWelcome To Make python & php Host Maker\nClick python host to create python one\nclick php host to create php one\n- - - - - - - - - - - - - -\nBy  : @l_dll</b>', parse_mode="html",disable_web_page_preview=True,reply_to_message_id=message.message_id, reply_markup=maac)
             @bot.message_handler(commands=['about'])
