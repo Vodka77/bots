@@ -52,4 +52,4 @@ def start(message):
                 else:
                 	bot.send_message((message.chat.id), '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n\n‼️| اشترك ثم ارسل /start\n                    ')
                                   
-bot.polling(True)            
+bot.polling(True)
