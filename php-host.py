@@ -15,10 +15,10 @@ bot = telebot.TeleBot('5609332892:AAFAbSMpaHDPEQZNYEA5nBj7DIpB9-89WTE')
 @bot.message_handler(commands=['start','help'])
 def start(message):
                 
-	            idd = message.from_user.id
-	            url = f"https://api.telegram.org/bot{token}/getchatmember?chat_id={ch}&user_id={idd}"
-	            req = requests.get(url)
-	            if idd == sudo_id or 'member' in req.text or 'creator' in req.text or 'administartor' in req.text:
+	        idd = message.from_user.id
+	        url = f"https://api.telegram.org/bot{token}/getchatmember?chat_id={ch}&user_id={idd}"
+	        req = requests.get(url)
+	        if idd == sudo_id or 'member' in req.text or 'creator' in req.text or 'administartor' in req.text:
                     print(message.from_user.id)
                     print('@',message.from_user.username)
                     maac = types.InlineKeyboardMarkup()
