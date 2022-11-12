@@ -21,7 +21,6 @@ def start(message):
         if '"status":"left"' in join:
             bot.send_message((message.chat.id), '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n\n‼️| اشترك ثم ارسل /start\n                    ')
         else:
-            try:
                 print(message.from_user.id)
                 print('@',message.from_user.username)
                 maac = types.InlineKeyboardMarkup()
@@ -52,5 +51,4 @@ def start(message):
                     eml = data['Email']
                     weblogin = "<a href='https://pantheon.auth0.com/login?state=hKFo2SBKblczb3JaS3V6RHBTdnRUME5SbWdaMXFkRnVQaVljUKFupWxvZ2luo3RpZNkgU3M4S3B6YTJlUGRQaU1GRUNlaTJ3aDlfR1VDbU1mV06jY2lk2SBxOWZXajl4blB4NE9BQVk5SU5ZZGNmaVlJVGtHdmFIcg&client=q9fWj9xnPx4OAAY9INYdcfiYITkGvaHr&protocol=oauth2&response_type=code&redirect_uri=https%3A%2F%2Fdashboard.pantheon.io%2Fauth%2Fcallback&scope=login%20openid%20pantheon&connection='>Here</a>"
                     bot.send_message(call.message.chat.id,f'<b>Done Create php Host Account 🧑‍💻\n- - - - - - - - - - -\nEmail : <code>{eml}</code>\nPassword : <code>QX#kC_Gdk%a</code>\nLogin Url : {weblogin}\n- - - - - - - - - - -\nBy : @Vodka_Tools</b>',parse_mode='html',disable_web_page_preview=True) 
-            except:
-                bot.polling(True)            
+bot.polling(True)            
