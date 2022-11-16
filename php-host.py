@@ -23,7 +23,7 @@ def start(message):
         idu1 = message.chat.id
         join1 = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch1}&user_id={idu1}").text
         if '"status":"left"' in join+join1:
-            bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n- https://t.me/TBGBT\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True)           
+            bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/+sZqgjKC_5UZmZDNk\n- https://t.me/TBGBT\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True)           
         else:
             print(message.from_user.id)
             print('@',message.from_user.username)
@@ -33,7 +33,7 @@ def start(message):
             ch = types.InlineKeyboardButton(text ="- Channel 1",url='https://t.me/Vodka_Tools')  
             ch1 = types.InlineKeyboardButton(text ="- Channel 2",url='https://t.me/TBGBT')  
             maac.row_width = 2
-            maac.add(ca,py,ch,ch1)    
+            maac.add(ca,py,ch)    
             bro = f"<a href='https://t.me/{message.from_user.username}'>{message.from_user.first_name}</a>"            
             bot.send_message(message.chat.id , f'<b>Hi {bro}\n- - - - - - - - - - - - - -\nWelcome To Make python & php Host Maker\nClick python host to create python one\nclick php host to create php one\n- - - - - - - - - - - - - -\nBy  : @l_dll</b>', parse_mode="html",disable_web_page_preview=True,reply_to_message_id=message.message_id, reply_markup=maac)
             @bot.message_handler(commands=['about'])
@@ -42,14 +42,11 @@ def start(message):
             @bot.callback_query_handler(func=(lambda call:True))
             def callback_inline(call):
                 if call.data == 'make':
-                    ch = 'Vodka_Tools'
-                    idu = message.chat.id
-                    join = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch}&user_id={idu}").text
-                    ch1 = 'TBGBT'
-                    idu1 = message.chat.id
-                    join1 = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch1}&user_id={idu1}").text
-                    if '"status":"left"' in join+join1:
-                        bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n- https://t.me/TBGBT\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True) 
+                    ch6 = 'Vodka_Tools'
+                    idu6 = message.chat.id
+                    join6 = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch6}&user_id={idu6}").text
+                    if '"status":"left"' in join6:
+                        bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True) 
                     else:
                         host = requests.get('https://vodka-toolsx.herokuapp.com/Host-Maker/?type=2').json()
                         user = host['user']
@@ -61,14 +58,11 @@ def start(message):
                         name = f"<a href='{call.from_user.first_name}'>{call.from_user.first_name}</a>" 
                         bot.send_message(call.message.chat.id,f'<b>Done Create python Host Account 🧑‍💻\n- - - - - - - - - - - -\nEmail : <code>{email}</code>\nUserName : <code>{user}</code>\nPassword : <code>{passw}</code>\nLogin : {log}\nWebsite-Url : {web_url}\n- - - - - - - - - - - -\nBy : @Vodka_Tools</b>',parse_mode='html',disable_web_page_preview=True)
                 if call.data == "acc":
-                    ch = 'Vodka_Tools'
-                    idu = message.chat.id
-                    join = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch}&user_id={idu}").text
-                    ch1 = 'TBGBT'
+                    ch1 = 'Vodka_Tools'
                     idu1 = message.chat.id
                     join1 = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch1}&user_id={idu1}").text
-                    if '"status":"left"' in join+join1:
-                        bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n- https://t.me/TBGBT\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True) 
+                    if '"status":"left"' in join1:
+                        bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n- https://t.me/Vodka_Tools\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True) 
                     else:
                         data = requests.get(f'https://vodka-toolsx.herokuapp.com/Host-Maker/?type=1').json()
                         eml = data['Email']
