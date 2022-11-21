@@ -22,8 +22,8 @@ def start(message):
         ch1 = 'TBGBT'
         idu1 = message.chat.id
         join1 = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{ch1}&user_id={idu1}").text
-        if ch == 'Vodka_Tools':
-            bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n - https://t.me/B4U_ARABICBOT?start=00754399040\n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True)           
+        if '"status":"left"' in join:
+            bot.send_message(message.chat.id, '\n🚸| عذرا عزيزي\n🧿| عليك الاشتراك بقناة البوت لتتمكن من استخدامه\n\n - https://Vodka_Tools \n\n‼️| اشترك ثم ارسل /start\n                    ',disable_web_page_preview=True)           
         else:
             print(message.from_user.id)
             print('@',message.from_user.username)
